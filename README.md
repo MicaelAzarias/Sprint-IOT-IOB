@@ -1,110 +1,100 @@
 🧠 Classificação de Gênero e Faixa Etária com Visão Computacional
+
+Projeto desenvolvido em Python para identificar o gênero e a faixa etária de uma pessoa em tempo real usando a webcam.
+Utiliza técnicas de Visão Computacional e Deep Learning com modelos .h5 pré-treinados.
+
 🎯 Objetivo
 
-Este projeto tem como objetivo reconhecer o gênero (Homem ou Mulher) e estimar a faixa etária de uma pessoa em tempo real usando a webcam do computador.
-A aplicação combina técnicas de Visão Computacional e Deep Learning para detectar rostos, extrair a região facial e realizar previsões utilizando modelos de redes neurais previamente treinados.
+O sistema detecta rostos capturados pela webcam, processa a imagem e realiza duas previsões:
 
-⚙️ Tecnologias e Dependências
-🧩 Bibliotecas Principais
+👨‍🦱 Gênero: Homem ou Mulher
 
-Python 3.10+
+🎂 Faixa etária: 6–20, 25–30, 42–48 ou 60–98 anos
 
-OpenCV → captura e processamento de vídeo
+Tudo acontece em tempo real, mostrando o resultado diretamente sobre o rosto detectado.
 
-MediaPipe → detecção de rostos
-
-TensorFlow / Keras → carregamento dos modelos .h5
-
-NumPy → manipulação de matrizes
-
-cvzone → exibição de textos e caixas na tela
-
-📦 Instalação das dependências
-
-No terminal, execute:
-
+⚙️ Tecnologias Utilizadas
+Tecnologia	Função
+🐍 Python 3.10+	Linguagem principal
+🎥 OpenCV	Captura e processamento de vídeo
+👁️ MediaPipe	Detecção facial
+🧠 TensorFlow / Keras	Carregamento e execução dos modelos de IA
+🧩 NumPy	Manipulação de arrays e normalização
+💬 cvzone	Exibição de textos e caixas na tela
+🧩 Instalação e Execução
+1️⃣ Instale as dependências
 pip install numpy opencv-python tensorflow keras mediapipe cvzone
 
-🚀 Execução do Projeto
-
-Clone o repositório
-
-git clone https://github.com/seu-usuario/classificacao-genero-idade.git
-cd classificacao-genero-idade
-
-
-Garanta que os modelos estão no diretório principal:
-
-├── model_gender.h5
-├── model_age.h5
-├── testModel.py
-└── redim.py
-
-
-Execute o script principal
-
-python testModel.py
-
-
-O sistema abrirá uma janela da webcam exibindo:
-
-Um retângulo verde ao redor do rosto detectado.
-
-O gênero previsto e a faixa etária estimada.
-
-A confiança (%) do modelo para cada predição.
-
-Para encerrar o programa, pressione a tecla q.
-
-🧾 Parâmetros e Funcionamento
-
-A imagem capturada é redimensionada para 224x224 pixels.
-
-Os valores de pixel são normalizados entre [-1, 1].
-
-Dois modelos são usados:
-
-model_gender.h5 → classifica Homem ou Mulher.
-
-model_age.h5 → classifica em uma das faixas:
-
-6–20 anos
-
-25–30 anos
-
-42–48 anos
-
-60–98 anos
-
-🧩 Organização do Código
+2️⃣ Estrutura do projeto
 📁 gender_and_age_classification-main
 │
-├── model_age.h5              # Modelo de faixa etária pré-treinado
-├── model_gender.h5           # Modelo de gênero pré-treinado
-├── testModel.py              # Script principal (execução com webcam)
-├── redim.py                  # Script auxiliar para redimensionar imagens
-└── README.md                 # Documentação do projeto
+├── model_gender.h5          # Modelo de gênero
+├── model_age.h5             # Modelo de idade
+├── testModel.py             # Script principal
+├── redim.py                 # Script auxiliar
+└── README.md
 
+3️⃣ Execute o programa
+python testModel.py
+
+4️⃣ Resultado
+
+A janela da webcam será aberta mostrando:
+
+🟩 Um retângulo verde em volta do rosto
+
+🧍 O gênero previsto
+
+⏳ A faixa etária estimada
+
+📊 A confiança (%) da previsão
+
+➡️ Pressione q para encerrar o programa.
+
+🔬 Como Funciona
+
+O vídeo é capturado em tempo real pela webcam.
+
+O MediaPipe detecta o rosto e extrai a região facial.
+
+A imagem é redimensionada para 224x224 pixels e normalizada entre [-1, 1].
+
+Os dois modelos (gender e age) processam a imagem.
+
+O resultado é exibido visualmente com as previsões e confianças.
+
+📊 Parâmetros dos Modelos
+Modelo	Tipo	Saídas	Precisão mínima exibida
+model_gender.h5	Classificação binária	Homem / Mulher	30%
+model_age.h5	Classificação por faixa	6–20, 25–30, 42–48, 60–98	40%
 ⚖️ Nota Ética sobre o Uso de Dados Faciais
 
-O reconhecimento facial é uma tecnologia poderosa, mas requer uso ético e responsável.
-Este projeto é estritamente educacional, desenvolvido para fins de estudo de técnicas de Visão Computacional e Machine Learning.
+⚠️ Este projeto é educacional e não deve ser usado para fins comerciais sem consentimento dos usuários.
 
-Nenhuma imagem ou dado facial de usuários é armazenado ou compartilhado.
-Em aplicações reais, o uso de reconhecimento facial deve seguir:
+Nenhum dado facial é salvo ou transmitido.
 
-Leis de proteção de dados (como a LGPD no Brasil e o GDPR na Europa);
+O reconhecimento facial deve respeitar:
 
-Consentimento explícito dos usuários;
+A LGPD (Lei Geral de Proteção de Dados) no Brasil
 
-Evitar vieses discriminatórios nos modelos treinados.
+O GDPR na Europa
+
+Em aplicações reais, é fundamental obter consentimento informado e reduzir vieses de gênero, idade ou etnia.
+
+🚧 Limitações
+
+Pode falhar com pouca iluminação ou ângulos extremos.
+
+As faixas etárias são amplas e podem gerar confusão.
+
+O modelo foi treinado em um dataset genérico, podendo apresentar viés em rostos de diferentes origens.
 
 🔮 Próximos Passos
 
-Treinar modelos próprios com datasets diversificados.
+🧠 Treinar modelos personalizados e mais precisos
 
-Aprimorar a acurácia em diferentes condições de iluminação.
+📱 Adaptar o sistema para rodar em dispositivos móveis
 
-Adicionar detecção de emoções ou expressões faciais.
+😊 Adicionar reconhecimento de emoções e expressões faciais
 
-Portar a aplicação para dispositivos móveis.
+⚡ Melhorar desempenho em tempo real
