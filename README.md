@@ -67,6 +67,8 @@ O resultado é exibido visualmente com as previsões e confianças.
 Modelo	Tipo	Saídas	Precisão mínima exibida
 model_gender.h5	Classificação binária	Homem / Mulher	30%
 model_age.h5	Classificação por faixa	6–20, 25–30, 42–48, 60–98	40%
+
+
 ⚖️ Nota Ética sobre o Uso de Dados Faciais
 
 ⚠️ Este projeto é educacional e não deve ser usado para fins comerciais sem consentimento dos usuários.
