@@ -1,3 +1,14 @@
+Integrantes:
+
+Micael Santos Azarias |RM552699
+
+Felipe Megumi NAkama |RM552821
+
+Carolina Cavalli Machado |RM552925
+
+Nathan da Silveira Uflacker |RM553264
+
+
 🧠 Classificação de Gênero e Faixa Etária com Visão Computacional
 
 Projeto desenvolvido em Python para identificar o gênero e a faixa etária de uma pessoa em tempo real usando a webcam.
